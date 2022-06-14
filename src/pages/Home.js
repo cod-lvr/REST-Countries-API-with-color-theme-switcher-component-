@@ -4,7 +4,7 @@ import axios from "axios";
 import Countries from "../components/Countries";
 
 function Home() {
-  const [countriesData, setCountriesData] = useState([]);
+  const [countriesData, setCountriesData] = useState();
   // const [setValue, setValueHandler] = useState({
   //   value: "all",
   //   name: "",
@@ -24,7 +24,9 @@ function Home() {
         `https://restcountries.com/v3.1/all` //${setValue.value}
       );
       console.log(response);
-      setCountriesData(() => response.data);
+      const dataArr = [...response.data];
+      console.log(dataArr);
+      setCountriesData(dataArr);
     } catch (error) {
       console.error(error);
     }
@@ -72,7 +74,12 @@ function Home() {
             </select>
           </div>
         </form>
-        <Countries data={countriesData} />
+        {/* <Countries data={countriesData} /> */}
+        <ul>
+          {countriesData.map((item) => {
+            return <li key={item.area}>{item.name}</li>;
+          })}
+        </ul>
       </main>
     </React.Fragment>
   );
