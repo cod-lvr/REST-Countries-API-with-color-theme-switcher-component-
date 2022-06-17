@@ -1,23 +1,11 @@
 import React, { useState } from "react";
 import Header from "../components/UI/Header";
 import axios from "axios";
-import Countries from "../components/Countries";
+// import CountryItem from "../components/CountyItem";
 
 function Home() {
-  const [countriesData, setCountriesData] = useState();
-  // const [setValue, setValueHandler] = useState({
-  //   value: "all",
-  //   name: "",
-  // });
-  // const [setChangeValue, setChangeValueHandler] = useState(null);
+  // const [countriesData, setCountriesData] = useState();
 
-  // const changeValueName = () => {
-  //   // setValueHandler( () => {
-  //   //   return {
-  //   //     value: ''
-  //   //   }
-  //   // })
-  // };
   const fetchData = async () => {
     try {
       const response = await axios.get(
@@ -26,7 +14,7 @@ function Home() {
       console.log(response);
       const dataArr = [...response.data];
       console.log(dataArr);
-      setCountriesData(dataArr);
+      // setCountriesData(dataArr);
     } catch (error) {
       console.error(error);
     }
@@ -74,12 +62,8 @@ function Home() {
             </select>
           </div>
         </form>
-        {/* <Countries data={countriesData} /> */}
-        <ul>
-          {countriesData.map((item) => {
-            return <li key={item.area}>{item.name}</li>;
-          })}
-        </ul>
+
+        <ul className="p-2">{/* <CountryItem data={countriesData} /> */}</ul>
       </main>
     </React.Fragment>
   );
