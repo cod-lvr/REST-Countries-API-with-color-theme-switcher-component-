@@ -10,6 +10,9 @@ module.exports = {
         "Very-Light-Gray": "hsl(0, 0%, 98%)",
         White: "hsl(0, 0%, 100%)",
       },
+      boxShadow: {
+        '3xl': '0px 0px 23px 0px rgba(0,0,0,0.2);',
+      }
     },
   },
   plugins: [],
