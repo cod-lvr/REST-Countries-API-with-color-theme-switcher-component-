@@ -1,7 +1,6 @@
 import React from "react";
 import Header from "../components/UI/Header";
 import { Link } from "react-router-dom";
-import '../styles/countrydetails.css';
 import bel from '../assets/belgium.png';
 import {BsArrowLeft} from 'react-icons/bs'
 
@@ -15,7 +14,7 @@ function CountryDetail(props) {
   return (  
     <React.Fragment>
       <Header />
-      {/* <main className="main-wrapper">
+      <main className="p-4 h-screen bg-slate-50">
         
         
         
@@ -24,15 +23,15 @@ function CountryDetail(props) {
       
       
       
-        <Link to="/"><button className="back-btn flex flex-row"><span className="back-icon"><BsArrowLeft size={26}/></span>Back</button></Link>
-          <div className="row">
+        <Link to="/"><button className="flex flex-row shadow-3xl pt-2 pb-2 pr-5 m-3 w-auto"><span className="mr-5 ml-5"><BsArrowLeft size={26}/></span>Back</button></Link>
+          <div className="flex flex-col md:flex-row lg:flex-row">
               <div className="base-wrapper">
-                <img src={bel}  alt="" className="flag-img" />
+                <img src={bel}  alt="" className="fw-full h-auto mt-10 mb-10" />
                 CHANGE THE IMG SRC TO THE IMG PULLED FROM API
               </div>
-              <div className="desc-section flex flex-col md:flex-col lg:flex-row">
-                <div className="info1">
-                <h1 className="country-name">Belgium</h1>
+              <div className="flex flex-col md:flex-col lg:flex-row p-5 pt-8">
+                <div className="w-full m-4">
+                <h1 className="text-2xl font-bold mt-1">Belgium</h1>
                   <ul className="basic-info">
                   
                   
@@ -41,15 +40,15 @@ function CountryDetail(props) {
                   
                   
                   
-                  <li><span>Native Name: </span> Belgie</li> 
-                    <li><span> Population: </span>11,341,511</li>
-                    <li><span> Region: </span>Europe</li>
-                    <li><span> Sub Region: </span> Western Europe</li>
-                    <li><span> Capital: </span>Brussels</li>
+                  <li><span className="font-semibold">Native Name: </span> Belgie</li> 
+                    <li><span className="font-semibold"> Population: </span>11,341,511</li>
+                    <li><span className="font-semibold"> Region: </span>Europe</li>
+                    <li><span className="font-semibold"> Sub Region: </span> Western Europe</li>
+                    <li><span className="font-semibold"> Capital: </span>Brussels</li>
                   </ul>
                 </div>
-                <div className="info2">
-                  <ul className="extra-info">
+                <div className="w-full m-4">
+                  <ul className="mt-8 mb-8">
                   
                   
                   
@@ -57,25 +56,25 @@ function CountryDetail(props) {
                   
                   
                   
-                  <li><span>Top Level Domain:</span> .be</li>
-                    <li><span>Currencies</span> Euro</li>
-                    <li><span>Languages</span> Dutch, French, German</li>
+                  <li><span className="font-semibold">Top Level Domain:</span> .be</li>
+                    <li><span className="font-semibold">Currencies</span> Euro</li>
+                    <li><span className="font-semibold">Languages</span> Dutch, French, German</li>
                   </ul>
                 </div>
-                <div className="border-countries">
-                  <h1 className="border-countries-h1">Border Countries:</h1>
-                  <div className="border-countries-btns flex flex-row justify-center items-center">
+                <div className="m-0 w-full">
+                  <h1 className="font-semibold ml-5">Border Countries:</h1>
+                  <div className="flex flex-row justify-center items-center">
                   
                   //NOTE: PUT THE COUNTRY LINKS IN THESE BUTTONS
                    
-                   <Link to=""><button className="border-country-btn">France</button></Link>
-                    <Link to=""><button className="border-country-btn">Germany</button></Link>
-                    <Link to=""><button className="border-country-btn">Netherlands</button></Link>
+                   <Link to=""><button className="shadow-3xl p-2 m-3 text-sm pr-5 pl-5">France</button></Link>
+                    <Link to=""><button className="shadow-3xl p-2 m-3 text-sm pr-5 pl-5">Germany</button></Link>
+                    <Link to=""><button className="shadow-3xl p-2 m-3 text-sm pr-5 pl-5">Netherlands</button></Link>
                   </div>
                 </div>
             </div>
           </div>
-      </main> */}
+      </main>
     </React.Fragment>
   );
 }

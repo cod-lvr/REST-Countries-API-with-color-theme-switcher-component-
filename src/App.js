@@ -9,7 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         {/* ACTIVATE THIS ROUTE BELOW TO CHECK THE PAGE */}
-        {/* <Route path="/details" element={<CountryDetails />} /> */}
+        <Route path="/details" element={<CountryDetails />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
