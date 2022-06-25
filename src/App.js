@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-// import CountryDetails from "../src/components/CountryDetails";
+import CountryDetails from "./pages/CountryDetail";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 
@@ -8,7 +8,8 @@ function App() {
     <div>
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* <Route path=":details" element={<CountryDetails />} /> */}
+        {/* ACTIVATE THIS ROUTE BELOW TO CHECK THE PAGE */}
+        <Route path="/details" element={<CountryDetails />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
