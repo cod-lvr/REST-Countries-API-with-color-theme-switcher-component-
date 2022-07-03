@@ -1,20 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../components/UI/Header";
 import axios from "axios";
-// import CountryItem from "../components/CountyItem";
+import CountryItem from "../components/CountryItem.js";
 
 function Home() {
-  // const [countriesData, setCountriesData] = useState();
+  const [countriesData, setCountriesData] = useState([]);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   const fetchData = async () => {
     try {
       const response = await axios.get(
         `https://restcountries.com/v3.1/all` //${setValue.value}
       );
-      console.log(response);
-      const dataArr = [...response.data];
-      console.log(dataArr);
-      // setCountriesData(dataArr);
+      const countryData = await response.data;
+      setCountriesData(countryData);
     } catch (error) {
       console.error(error);
     }
@@ -31,7 +33,7 @@ function Home() {
         <form onSubmit={formSubmitionHandler}>
           <div className="relative">
             <button type="submit" className="absolute top-4 left-4 text-md  ">
-              <i class="fas fa-search"></i>
+              <i className="fas fa-search"></i>
             </button>
             <input
               // onChange={setValue.name}
@@ -42,7 +44,7 @@ function Home() {
           </div>
           <div className="mt-2 w-8/12">
             <label
-              for="Region"
+              htmlFor="Region"
               className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
             >
               Filter by Region
@@ -63,7 +65,9 @@ function Home() {
           </div>
         </form>
 
-        <ul className="p-2">{/* <CountryItem data={countriesData} /> */}</ul>
+        <ul className="p-2">
+          <CountryItem data={countriesData} />
+        </ul>
       </main>
     </React.Fragment>
   );
